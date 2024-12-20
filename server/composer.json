@@ -1,0 +1,35 @@
+{
+  "name": "jarvisoss/car_gallery",
+  "description": "Car Gallery Simple Demo Project",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "App\\Controllers\\": "src/controllers/",
+      "App\\Middlewares\\": "src/middlewares/",
+      "App\\Models\\": "src/models/",
+      "App\\Repositories\\": "src/repositories/"
+    }
+  },
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "backendsamurai",
+      "email": "pokrivchakzvitalja@gmail.com",
+      "homepage": "https://github.com/backendsamurai"
+    }
+  ],
+  "require": {
+    "php": "7.4.*",
+    "jarvisoss/framework": "v1.0.1"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"unlink(__DIR__ . '/LICENSE');\"",
+      "php -r \"unlink(__DIR__ . '/README.md');\"",
+      "php -r \"copy(__DIR__ . '/.env.example', __DIR__ . '/.env');\"",
+      "php -r \"unlink(__DIR__ . '/.env.example');\""
+    ]
+  }
+}

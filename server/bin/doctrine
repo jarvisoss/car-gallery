@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+use Csr\Framework\Kernel\Kernel;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
+
+/** @var Kernel $app */
+$app = require_once(__DIR__ . '/../public/index.php');
+
+$manager = $app->get(EntityManager::class);
+
+ConsoleRunner::run(
+    new SingleManagerProvider($manager)
+);
